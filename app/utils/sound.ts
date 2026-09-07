@@ -1,4 +1,5 @@
 import { error } from "node:console";
+import { toast } from "sonner";
 
 const clickSound =
   typeof window !== "undefined" ? new Audio("스피키/사운드/에으.mp3") : null;
@@ -10,5 +11,6 @@ export const playSpeakiSound = (): void => {
 
   clickSound.play().catch((error) => {
     console.log(error);
+    toast.error("소리가 아직 업딴마리에요오");
   });
 };
